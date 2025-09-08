@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: simple-todo
-        image: jainritikaa05/todo-app:latest   # new image tag
+        image: jainritikaa05/todo-app:canary   # new image tag
         ports:
         - containerPort: 80

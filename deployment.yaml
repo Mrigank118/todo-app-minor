@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-todo-canary
+  name: simple-todo-deployment
 spec:
-  replicas: 1                        # small number of pods for canary
+  replicas: 2
   selector:
     matchLabels:
       app: simple-todo
-      version: canary                 # add version label
   template:
     metadata:
       labels:
         app: simple-todo
-        version: canary               # add version label
     spec:
       containers:
       - name: simple-todo
-        image: jainritikaa05/todo-app:latest   # new image tag
+        image: jainritikaa05/todo-app:latest
         ports:
         - containerPort: 80
